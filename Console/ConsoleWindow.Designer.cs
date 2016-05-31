@@ -32,6 +32,8 @@
             this.inputTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,16 +80,33 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectStripMenuItem,
+            this.disconnectToolStripMenuItem,
             this.quitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // connectStripMenuItem
+            // 
+            this.connectStripMenuItem.Name = "connectStripMenuItem";
+            this.connectStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectStripMenuItem.Text = "Connect";
+            this.connectStripMenuItem.Click += new System.EventHandler(this.connectStripMenuItem_Click);
+            // 
+            // disconnectToolStripMenuItem
+            // 
+            this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disconnectToolStripMenuItem.Text = "Disconnect";
+            this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
+            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(97, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -131,6 +150,8 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearConsoleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disconnectToolStripMenuItem;
     }
 }
 

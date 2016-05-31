@@ -37,5 +37,20 @@ namespace Console
                 inputTextBox.Text = "";
             }
         }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.Quit();
+        }
+
+        private void connectStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.ConnectToGPIBDevice();
+        }
+
+        private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.DisconnectToGPIBDevice();
+        }
     }
 }

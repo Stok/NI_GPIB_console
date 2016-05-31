@@ -16,9 +16,6 @@ namespace Console
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Controller controller = new Controller();
-
-
-            controller.Start();
         }
     }
 }
