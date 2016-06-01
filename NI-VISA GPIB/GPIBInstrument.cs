@@ -10,9 +10,11 @@ namespace NI_VISA_GPIB
     { 
         GpibSession session;
         string address;
+        bool IsConnected;
 
         public GPIBInstrument(String visaAddress)
         {
+            IsConnected = false;
             this.address = visaAddress;
         }
 
@@ -23,28 +25,60 @@ namespace NI_VISA_GPIB
             session.IOProtocol = Ivi.Visa.IOProtocol.Normal;
             session.SendEndEnabled = true;
             session.TerminationCharacterEnabled = false;
-            Ivi.Visa.StatusByteFlags flag = session.ReadStatusByte();
-            return flag.ToString();
+            try
+            {
+                Ivi.Visa.StatusByteFlags flag = session.ReadStatusByte();
+                IsConnected = true;
+                return flag.ToString();
+            }
+            catch(Exception e)
+            {
+                return e.Message;
+            }
         }
 
         public void Disconnect()
         {
             session.Dispose();
+            IsConnected = false;
         }
 
-        public void Write(String command)
+        public string Write(String command)
         {
-            session.RawIO.Write(command);
+            try
+            {
+                session.RawIO.Write(command);
+                return "Complete.";
+            }
+            catch(Exception e)
+            {
+                return e.Message;
+            }
         }
 
         public string Read()
         {
-            return session.RawIO.ReadString();
+            try
+            {
+                return session.RawIO.ReadString();
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+            
         }
 
         public string Read(int numChars)
         {
-            return session.RawIO.ReadString(numChars);
+            try
+            {
+                return session.RawIO.ReadString(numChars);
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
 

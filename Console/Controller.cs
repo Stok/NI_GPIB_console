@@ -13,6 +13,7 @@ namespace Console
         ConsoleWindow window;
         GPIBInstrument gpib;
 
+
         public Controller()
         {
             window = new ConsoleWindow(this);
@@ -36,7 +37,7 @@ namespace Console
             window.WriteToConsole("Connecting...");
             gpib = new GPIBInstrument("GPIB0::8::INSTR");
             string stb = gpib.Connect();
-            window.WriteToConsole("GPIB device returned " + stb + " as a status byte.");
+            window.WriteToConsole("GPIB device returned \"" + stb + "\" as a status byte.");
         }
 
         internal void DisconnectToGPIBDevice()
