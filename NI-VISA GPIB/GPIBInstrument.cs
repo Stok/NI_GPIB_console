@@ -10,11 +10,9 @@ namespace NI_VISA_GPIB
     { 
         GpibSession session;
         string address;
-        bool IsConnected;
 
         public GPIBInstrument(String visaAddress)
         {
-            IsConnected = false;
             this.address = visaAddress;
         }
 
@@ -28,7 +26,6 @@ namespace NI_VISA_GPIB
             try
             {
                 Ivi.Visa.StatusByteFlags flag = session.ReadStatusByte();
-                IsConnected = true;
                 return flag.ToString();
             }
             catch(Exception e)
@@ -40,7 +37,6 @@ namespace NI_VISA_GPIB
         public void Disconnect()
         {
             session.Dispose();
-            IsConnected = false;
         }
 
         public string Write(String command)

@@ -21,8 +21,13 @@ namespace Console
 
         public void WriteToConsole(string text)
         {
+            outputTextbox.Invoke(new writeToConsoleDelegate(writeToConsole), new object[] { text });
+        }
+        void writeToConsole(string text)
+        {
             outputTextbox.AppendText(" >>  " + text + "\n");
         }
+        private delegate void writeToConsoleDelegate(string text);
 
         private void clearConsoleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -50,7 +55,17 @@ namespace Console
 
         private void disconnectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            controller.DisconnectToGPIBDevice();
+            controller.DisconnectGPIBDevice();
+        }
+
+        private void ConsoleWindow_Shown(object sender, EventArgs e)
+        {
+            controller.ActivateRemoting();
+        }
+
+        private void ConsoleWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            controller.Quit();
         }
     }
 }

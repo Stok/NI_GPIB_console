@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GPIBCommandLookup.cs" />
     <Compile Include="GPIBInstrument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

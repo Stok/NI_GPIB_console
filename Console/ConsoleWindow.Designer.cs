@@ -90,21 +90,21 @@
             // connectStripMenuItem
             // 
             this.connectStripMenuItem.Name = "connectStripMenuItem";
-            this.connectStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connectStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.connectStripMenuItem.Text = "Connect";
             this.connectStripMenuItem.Click += new System.EventHandler(this.connectStripMenuItem_Click);
             // 
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -134,6 +134,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ConsoleWindow";
             this.Text = "Console";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConsoleWindow_FormClosed);
+            this.Shown += new System.EventHandler(this.ConsoleWindow_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
