@@ -19,12 +19,8 @@ namespace Console
             Application.Run(window);
         }
 
-        public void Start()
-        {
 
-        }
-
-        internal void SendToGPIBDevice(string tt)
+        internal void QueryGPIBDevice(string tt)
         {
             string text = tt + "\n";
             window.WriteToConsole("Writing \"" + text + "\" to device.");

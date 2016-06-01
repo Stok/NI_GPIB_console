@@ -33,7 +33,7 @@ namespace Console
         {
             if (e.KeyChar == (char)13)
             {
-                controller.SendToGPIBDevice(inputTextBox.Text);
+                controller.QueryGPIBDevice(inputTextBox.Text);
                 inputTextBox.Text = "";
             }
         }
